@@ -1,7 +1,7 @@
 
 ## Prompt
 
-source promptcolors
+source ~/bin/dotfiles/bash/promptcolors
 PS1="\n\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n→ "
 
 ## Key Bindings
