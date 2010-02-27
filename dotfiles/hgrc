@@ -1,0 +1,32 @@
+[ui]
+username = Sergio Acosta <sergio.acosta@gmail.com>
+ssh = ssh -C
+
+[extensions]
+hgext.convert =
+bookmarks=
+color=
+churn=
+fetch=
+rebase=
+record=
+crecord = ~/.hgext/crecord
+hgext.graphlog =
+hgext.mq=
+pager=
+hgattic = ~/.hgext/hgattic/attic.py
+prompt = ~/.hgext/hg-prompt/prompt.py
+histedit = ~/.hgext/histedit
+
+[alias]
+amend = hg qimport -r tip ; hg qrefresh -e ; hg qfinish tip
+qnew = qnew -e
+
+[bookmarks]
+track.curent = True
+
+[pager]
+pager = LESS='FSRX' less
+
+[diff]
+git=1
