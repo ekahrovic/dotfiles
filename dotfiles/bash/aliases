@@ -1,4 +1,20 @@
-alias tu='top -o cpu' # cpu
-alias tm='top -o vsize' # memory
+## Bash commands
 
-alias g="git status"
+alias ls="ls -GF"
+alias lss="ls -GathorF"
+
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ..."
+alias ....="cd ...."
+alias .....="cd ....."
+
+## Tree
+
+alias tree2="tree -L 2"
+alias tree3="tree -L 3"
+
+## Mercurial
+
+alias hgst='hg status $(hg root) -n'
+
