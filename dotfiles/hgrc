@@ -21,6 +21,7 @@ histedit = ~/.hgext/histedit
 [alias]
 qnew = qnew -e
 stat = diff --stat -c tip
+qstat = qdiff --stat
 
 [bookmarks]
 track.curent = True
