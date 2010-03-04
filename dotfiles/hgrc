@@ -19,8 +19,8 @@ prompt = ~/.hgext/hg-prompt/prompt.py
 histedit = ~/.hgext/histedit
 
 [alias]
-amend = hg qimport -r tip ; hg qrefresh -e ; hg qfinish tip
 qnew = qnew -e
+stat = diff --stat -c tip
 
 [bookmarks]
 track.curent = True
