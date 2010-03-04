@@ -1,3 +1,10 @@
+## Utility
+
+# Reload aliases
+alias reload='source ~/bin/dotfiles/bash/aliases'
+# Edit aliases
+alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
+
 ## Bash commands
 
 alias ls="ls -GF"
@@ -5,9 +12,9 @@ alias lss="ls -GathorF"
 
 alias cd..="cd .."
 alias ..="cd .."
-alias ...="cd ..."
-alias ....="cd ...."
-alias .....="cd ....."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 ## Tree
 
