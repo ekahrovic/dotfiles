@@ -2,7 +2,8 @@
 ## Prompt
 
 source ~/bin/dotfiles/bash/promptcolors
-PS1="\n\[$CYAN\]\w \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\] \n⌘  "
+which vcprompt > /dev/null 2>&1 && ps1_vcprompt='$(vcprompt -f %n:%r/%b%u%m)'
+PS1="\n\[$CYAN\]\w \[$YELLOW\]$ps1_vcprompt\[$NO_COLOR\] \n⌘  "
 
 ## Key Bindings
 
