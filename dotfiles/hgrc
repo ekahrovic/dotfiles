@@ -31,3 +31,6 @@ pager = LESS='FSRX' less
 
 [diff]
 git=1
+
+[hooks]
+preoutgoing.confirm = read -p 'Are you sure you want to push to remote? (y/n): '; echo $REPLY | grep -q 'y'
