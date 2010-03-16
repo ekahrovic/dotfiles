@@ -3,7 +3,7 @@
 
 source ~/bin/dotfiles/bash/promptcolors
 which vcprompt > /dev/null 2>&1 && ps1_vcprompt='$(vcprompt -f %n:%r/%b%u%m)'
-PS1="\n\[$CYAN\]\w \[$YELLOW\]$ps1_vcprompt\[$NO_COLOR\] \n⌘  "
+PS1="\n\[$CYAN\]\w \[$YELLOW\]$ps1_vcprompt\[$NO_COLOR\] \n\! ⌘  "
 
 ## Key Bindings
 
@@ -12,8 +12,7 @@ bind '"\t":menu-complete'
 
 ## History
 
-export HISTCONTROL=erasedups
-export HISTSIZE=1000
+export HISTSIZE=2000
 shopt -s histappend
 
 # Do not overwrite files when redirecting output
