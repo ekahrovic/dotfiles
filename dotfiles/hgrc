@@ -17,6 +17,7 @@ pager=
 hgattic = ~/.hgext/hgattic/attic.py
 prompt = ~/.hgext/hg-prompt/prompt.py
 histedit = ~/.hgext/histedit
+hggit =
 
 [alias]
 qnew = qnew -e
