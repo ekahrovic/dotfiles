@@ -25,3 +25,6 @@ alias tree3="tree -L 3"
 
 alias hgst='hg status $(hg root) -n'
 
+# Maven 2
+# Execute maven without tests
+alias mvnnt='mvn -Dmaven.test.skip=true'
