@@ -23,8 +23,10 @@ alias tree3="tree -L 3"
 
 ## Mercurial
 
-alias hgst='hg status $(hg root) -n'
+alias hg-qedit='vim $(hg root)/.hg/patches/series'
+alias hg-st='hg status $(hg root) -n'
 
 # Maven 2
 # Execute maven without tests
 alias mvnnt='mvn -Dmaven.test.skip=true'
+
