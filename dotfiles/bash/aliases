@@ -23,10 +23,14 @@ alias tree3="tree -L 3"
 
 ## Mercurial
 
+# edit patch series file
 alias hg-qedit='vim $(hg root)/.hg/patches/series'
+# modified and new file list with paths relative to current directory
 alias hg-st='hg status $(hg root) -n'
+# Delete all modified and new files (like update -C but also deletes new files)
 alias hg-clean='hg-st | xargs rm'
-
+# Log filtering to show only commits in current branch
+alias hg-logb='hg log -b ($hg branch)'
 # Maven 2
 # Execute maven without tests
 alias mvnnt='mvn -Dmaven.test.skip=true'
