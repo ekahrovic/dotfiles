@@ -25,8 +25,11 @@ alias tree3="tree -L 3"
 
 alias hg-qedit='vim $(hg root)/.hg/patches/series'
 alias hg-st='hg status $(hg root) -n'
+alias hg-clean='hg-st | xargs rm'
 
 # Maven 2
 # Execute maven without tests
 alias mvnnt='mvn -Dmaven.test.skip=true'
 
+# Mac OS X
+alias safari='open -a Safari'
