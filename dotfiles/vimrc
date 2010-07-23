@@ -113,8 +113,8 @@ map <C-k> <C-e>
 " MAPPINGS FOR INSERT MODE
 " ============================================================
 
-" Map Shift-Space to exit insert mode
-inoremap <S-Space> <Esc>
+" Map Ctrl+L (not used and comfortable to type) to exit insert mode
+inoremap <C-L> <Esc>
 
 " Exit insert mode and save the buffer
 " (just fails silently if there is no name for the file yet)
@@ -238,6 +238,6 @@ nmap <S-F12> <C-T>
 " function commands
 " ============================================================
 " Open this file for edit in a new tab
-abbr config tabe ~/.vim/.vimrc
-abbr gconfig tabe ~/.vim/.gvimrc
+abbr config tabe ~/bin/dotfiles/vimrc
+abbr gconfig tabe ~/bin/dotfiles/gvimrc
 

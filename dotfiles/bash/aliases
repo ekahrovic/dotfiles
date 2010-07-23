@@ -23,6 +23,9 @@ alias tree3="tree -L 3"
 
 ## Mercurial
 
+# cd to current repository root
+alias hg-root='cd $(hg root)'
+alias hgroot=hg-root
 # edit patch series file
 alias hg-qedit='vim $(hg root)/.hg/patches/series'
 # modified and new file list with paths relative to current directory
@@ -31,9 +34,35 @@ alias hg-st='hg status $(hg root) -n'
 alias hg-clean='hg-st | xargs rm'
 # Log filtering to show only commits in current branch
 alias hg-logb='hg log -b $(hg branch)'
+# Open bitbucket page for current repository
+bitb() {
+    local P="$(hg paths 2>/dev/null | grep 'bitbucket.org' | head -1)"
+    local URL="$(echo $P | sed -e's|.*\(bitbucket.org.*\)|http://\1|')"
+    [[ -n $URL ]] && open $URL || echo "No BitBucket path found!"
+}
+# Commonly used mq commands
+alias qs='hg qseries'
+alias qp='hg qpush'
+alias qpf='hg qpush -f'
+alias pq='hg qpop'
+alias pqf='hg qpop -f'
+alias pqa='hg qpop --all'
+alias pqaf'hg qpop --all -f'
+alias qe='hg-qedit'
+alias qc='hg qpop --all'
+alias st='hg status'
+alias qa='hg qapplied'
+
 # Maven 2
 # Execute maven without tests
 alias mvnnt='mvn -Dmaven.test.skip=true'
 
 # Mac OS X
 alias safari='open -a Safari'
+
+# Wikipedia via DNS lookup (https://dgl.cx/2008/10/wikipedia-summary-dns)
+wiki() { dig +short txt $(sed 's/ /_/g'<<<$*).wp.dg.cx; }
+
+## Proyecto Actinver Capitales
+alias scptestlog='scp capitales@192.168.1.101:/opt/ibm/was/AppServer7.0.7.Trial.2/profiles/CapitalesTestProfile/engine-core.log ~/Desktop/testing-engine-core.log ; edit ~/Desktop/testing-engine-core.log'
+alias scpdevlog='scp capitales@192.168.1.101:/opt/ibm/was/AppServer7.0.7.Trial.2/profiles/CapitalesProfile/engine-core.log ~/Desktop/dev-engine-core.log ; edit ~/Desktop/dev-engine-core.log'

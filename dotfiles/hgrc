@@ -1,6 +1,7 @@
 [ui]
 username = Sergio Acosta <sergio.acosta@gmail.com>
 ssh = ssh -C
+merge = vim -d
 
 [extensions]
 hgext.convert =
@@ -10,19 +11,26 @@ churn=
 fetch=
 rebase=
 record=
-crecord = ~/.hgext/crecord
 hgext.graphlog =
 hgext.mq=
 pager=
 hgattic = ~/.hgext/hgattic/attic.py
 prompt = ~/.hgext/hg-prompt/prompt.py
 histedit = ~/.hgext/histedit
-hggit =
+transplant =
+hgext.extdiff =
+
+[extdiff]
+cmd.kdiff = kdiff3
+cmd.vimdiff = vim
+opts.vimdiff = -d
 
 [alias]
 qnew = qnew -e
 stat = diff --stat -c tip
 qstat = qdiff --stat
+
+slog = log --template '{rev} {author|user} {desc|fill76}\n'
 
 [bookmarks]
 track.curent = True
