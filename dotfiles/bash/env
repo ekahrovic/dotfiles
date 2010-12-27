@@ -13,6 +13,7 @@ export LANG=en_US.UTF-8
 ## Python
 
 export PYTHONDOCS="~/Documents/Reference/Python-Docs-2.5"
+export PYTHONSTARTUP="/Users/sergio/bin/dotfiles/python/.pythonstartup"
 
 ## Java 
 
@@ -23,10 +24,19 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export M2_HOME=/usr/local/apache-maven-2.2.1
 export M2=/bin
 
+## Groovy
+export GROOVY_HOME=/usr/local/groovy
+
 ## Derby
 
 export DERBY_HOME=/usr/share/derby
 
 ## PATH
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/usr/local/libexec/git-core:/usr/local/mysql/bin:/usr/local/scala/bin:/Users/sergio/bin:/bin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/usr/share/derby/bin:/usr/local/oracle/instantclient
-export PYTHONPATH=/usr/local/lib/python2.6/site-packages
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/usr/local/libexec/git-core:/usr/local/mysql/bin:/usr/local/scala/bin:/Users/sergio/bin:/bin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/usr/share/derby/bin:/usr/local/oracle/instantclient:/usr/local/apache-activemq/bin:$GROOVY_HOME/bin:/Users/sergio/source/google.com/go/bin
+
+## MANPATH
+export MANPATH=$MANPATH:/opt/local/share/man
+
+
+##  Coherence
+export COHERENCE_HOME=/usr/bin/coherence

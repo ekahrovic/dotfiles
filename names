@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+from BeautifulSoup import BeautifulSoup
+import urllib2
+import sys
+
+mode = 1
+
+if len(sys.argv) > 1:
+    mode = sys.argv[1]
+
+page = urllib2.urlopen("http://www.rinkworks.com/namegen/fnames.cgi?d=checked&f=" + mode)
+soup = BeautifulSoup(page.read())
+
+for list in soup.findAll('ul'):
+	for item in list.findAll('li'):
+		print item.string

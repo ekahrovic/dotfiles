@@ -11,6 +11,7 @@ if has('gui_running')
     "set guifont=Consolas:h13
     "set guifont=Envy\ Code\ R:h13
     "set guifont=Anonymous\ Pro:h15
+    set guifont=Inconsolata:h11
 
     " have error messages red on white (rather than the other way around, which
     " isn't very readable)

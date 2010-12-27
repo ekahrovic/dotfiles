@@ -1,9 +1,11 @@
 ## Utility
 
 # Reload aliases
-alias reload='source ~/bin/dotfiles/bash/aliases'
+alias reload='source ~/bin/dotfiles/bash/aliases ~/bin/dotfiles/bash/env'
 # Edit aliases
 alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
+# Edit environment
+alias ee='vim ~/bin/dotfiles/bash/env && reload'
 
 ## Bash commands
 
@@ -18,8 +20,10 @@ alias .....="cd ../../../.."
 
 ## Tree
 
+alias tree1="tree -L 1"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
+alias tree4="tree -L 4"
 
 ## Mercurial
 
@@ -42,16 +46,25 @@ bitb() {
 }
 # Commonly used mq commands
 alias qs='hg qseries'
+alias ql='hg qseries | cat'
 alias qp='hg qpush'
 alias qpf='hg qpush -f'
 alias pq='hg qpop'
 alias pqf='hg qpop -f'
 alias pqa='hg qpop --all'
-alias pqaf'hg qpop --all -f'
+alias pqaf='hg qpop --all -f'
 alias qe='hg-qedit'
-alias qc='hg qpop --all'
 alias st='hg status'
 alias qa='hg qapplied'
+alias qu='hg qunapplied'
+alias qr='hg qrefresh'
+alias qre='hg qrefresh -e'
+alias lb='hg log -b $(hg branch)'
+alias lg='hg log -G'
+alias qsedit='edit $(hg root)/.hg/patches/'
+alias hs='hg summary'
+alias hg-ammend='hg qimport -r tip; hg qrefresh; hg qfinish -a'
+alias G='hg log -G'
 
 # Maven 2
 # Execute maven without tests
@@ -66,3 +79,19 @@ wiki() { dig +short txt $(sed 's/ /_/g'<<<$*).wp.dg.cx; }
 ## Proyecto Actinver Capitales
 alias scptestlog='scp capitales@192.168.1.101:/opt/ibm/was/AppServer7.0.7.Trial.2/profiles/CapitalesTestProfile/engine-core.log ~/Desktop/testing-engine-core.log ; edit ~/Desktop/testing-engine-core.log'
 alias scpdevlog='scp capitales@192.168.1.101:/opt/ibm/was/AppServer7.0.7.Trial.2/profiles/CapitalesProfile/engine-core.log ~/Desktop/dev-engine-core.log ; edit ~/Desktop/dev-engine-core.log'
+
+## tmux
+
+# list existing sessions
+alias tls='tmux ls'
+
+alias kdiff=kdiff3
+
+# My own functions
+function url_encode() {
+    echo -n $@ | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg';
+}
+
+function google() {
+    open http://www.google.com/search?hl=en#q="`url_encode $@`" ;
+}

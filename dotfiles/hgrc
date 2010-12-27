@@ -1,7 +1,7 @@
 [ui]
 username = Sergio Acosta <sergio.acosta@gmail.com>
 ssh = ssh -C
-merge = vim -d
+merge = kdiff
 
 [extensions]
 hgext.convert =
@@ -22,13 +22,12 @@ hgext.extdiff =
 
 [extdiff]
 cmd.kdiff = kdiff3
-cmd.vimdiff = vim
-opts.vimdiff = -d
 
 [alias]
 qnew = qnew -e
 stat = diff --stat -c tip
 qstat = qdiff --stat
+vomit = commit
 
 slog = log --template '{rev} {author|user} {desc|fill76}\n'
 
@@ -41,5 +40,6 @@ pager = LESS='FSRX' less
 [diff]
 git=1
 
-[hooks]
-preoutgoing.confirm = read -p 'Are you sure you want to push to remote? (y/n): '; echo $REPLY | grep -q 'y'
+[merge-tools]
+kdiff.args = $base $local $other -o $output
+

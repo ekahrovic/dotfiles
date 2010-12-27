@@ -57,6 +57,9 @@ function! ToggleBackground()
 endfunction
 map <F4> :call ToggleBackground()<CR> 
 
+" Line under cursor
+set cursorline
+
 " ============================================================
 " SCROLL SETTINGS
 " ============================================================
@@ -105,10 +108,10 @@ filetype indent on
 " ============================================================
 " COLEMAK MAPPINGS
 " ============================================================
-source ~/.vim/colemak-mappings.vim
+"source ~/.vim/colemak-mappings.vim
 " Scroll up and down without moving the cursor
-map <C-h> <C-y>
-map <C-k> <C-e>
+"map <C-h> <C-y>
+"map <C-k> <C-e>
 " ============================================================
 " MAPPINGS FOR INSERT MODE
 " ============================================================
@@ -133,6 +136,10 @@ imap <M-BS> <C-w>
 " ============================================================
 " MAPPINGS FOR NORMAL MODE
 " ============================================================
+
+" Use <Enter> in normal mode as an alternative to :
+nnoremap <Enter> :
+nnoremap <S-CR> <CR>
 
 " search and relpace word under cursor (leaves cursor on command in order for
 " the user to complete the relpace part and options)
@@ -241,3 +248,12 @@ nmap <S-F12> <C-T>
 abbr config tabe ~/bin/dotfiles/vimrc
 abbr gconfig tabe ~/bin/dotfiles/gvimrc
 
+" Set an orange cursor in insert mode and a red cursor otherwise.
+" Works at least for xterm and rxvt terminals.
+" Does not work for gnome terminal, konsole, xfce4-terminal.
+if &term =~ "xterm\\|rxvt"
+    :silent !echo -ne "\033]12;red\007"
+    let &t_SI = "\033]12;orange\007"
+    let &t_EI = "\033]12;red\007"
+    autocmd VimLeave * :!echo -ne "\033]12;red\007"
+endif
