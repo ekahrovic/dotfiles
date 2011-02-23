@@ -19,6 +19,7 @@ prompt = ~/.hgext/hg-prompt/prompt.py
 histedit = ~/.hgext/histedit
 transplant =
 hgext.extdiff =
+zeroconf=
 
 [extdiff]
 cmd.kdiff = kdiff3

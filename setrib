@@ -1,2 +1,0 @@
-#!/bin/bash
-java -jar "/Users/sergio/manhattan/bin/setrib-command-line-executable.0-SNAPSHOT/setrib-command-line-1.0-SNAPSHOT.jar" $!

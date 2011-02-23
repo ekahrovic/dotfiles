@@ -4,3 +4,5 @@
 . ~/bin/dotfiles/bash/config
 . ~/bin/dotfiles/bash/aliases
 
+# Bashmarks: http://www.huyng.com/bashmarks-directory-bookmarks-for-the-shell/
+. ~/.local/bin/bashmarks.sh

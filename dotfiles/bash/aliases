@@ -9,9 +9,6 @@ alias ee='vim ~/bin/dotfiles/bash/env && reload'
 
 ## Bash commands
 
-alias ls="ls -GF"
-alias lss="ls -GathorF"
-
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
@@ -24,6 +21,9 @@ alias tree1="tree -L 1"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
 alias tree4="tree -L 4"
+
+# Directory Size
+alias dirsize="du -d 0 -h"
 
 ## Mercurial
 
@@ -39,7 +39,7 @@ alias hg-clean='hg-st | xargs rm'
 # Log filtering to show only commits in current branch
 alias hg-logb='hg log -b $(hg branch)'
 # Open bitbucket page for current repository
-bitb() {
+bitbucket() {
     local P="$(hg paths 2>/dev/null | grep 'bitbucket.org' | head -1)"
     local URL="$(echo $P | sed -e's|.*\(bitbucket.org.*\)|http://\1|')"
     [[ -n $URL ]] && open $URL || echo "No BitBucket path found!"
@@ -95,3 +95,9 @@ function url_encode() {
 function google() {
     open http://www.google.com/search?hl=en#q="`url_encode $@`" ;
 }
+
+alias ipython=bpython
+
+alias excel="open -a 'Microsoft Excel'"
+alias word="open -a 'Microsoft Word'"
+
