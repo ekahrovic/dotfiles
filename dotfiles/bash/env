@@ -37,6 +37,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/usr/local/libexec
 ## MANPATH
 export MANPATH=$MANPATH:/opt/local/share/man
 
-
 ##  Coherence
 export COHERENCE_HOME=/usr/bin/coherence
+
+##  Ruby RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

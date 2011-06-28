@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+import fileinput
+import os
+
+for line in fileinput.input():
+    components = os.path.splitext(line.strip())
+    if len(components) > 1:
+        print components[-1]
+    else:
+        print ''

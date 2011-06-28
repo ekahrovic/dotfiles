@@ -22,8 +22,11 @@ alias tree2="tree -L 2"
 alias tree3="tree -L 3"
 alias tree4="tree -L 4"
 
+# uuidgen without newlines
+alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
+
 # Directory Size
-alias dirsize="du -d 0 -h"
+alias whatsize="du -sh *"
 
 ## Mercurial
 

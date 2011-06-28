@@ -1,3 +1,6 @@
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+
 [ui]
 username = Sergio Acosta <sergio.acosta@gmail.com>
 ssh = ssh -C
@@ -20,6 +23,15 @@ histedit = ~/.hgext/histedit
 transplant =
 hgext.extdiff =
 zeroconf=
+kilnauth=~/bin/kiln_extensions/kilnauth.py
+kilnpath=~/bin/kiln_extensions/kilnpath.py
+
+[auth]
+kiln.prefix=reachcore.fogbugz.com
+kiln.username=sacosta@reachcore.com
+
+[kiln_scheme]
+kiln=http://reachcore.fogbugz.com/Kiln/Repo
 
 [extdiff]
 cmd.kdiff = kdiff3
